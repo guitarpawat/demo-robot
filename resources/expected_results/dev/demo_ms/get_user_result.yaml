@@ -1,0 +1,17 @@
+get_user_result:
+  TC-1:
+    id: 1
+    name: Guitar
+    money: 10.00
+    hobbies:
+      - name: Watching Youtube
+        isOutdoor: false
+      - name: Playing Games
+        isOutdoor: false
+    favouriteFoods:
+      - Ramen
+      - Sushi
+      - Pizza
+      - Bubble Tea
+    additionalInfo:
+      field1: test1
