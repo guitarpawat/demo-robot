@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    ${CURDIR}../../../../keywords/api/demo_ms/get_user.robot
-Variables    ${CURDIR}../../../../resources/expected_results/${env}/demo_ms/get_user_result.yaml
+Resource    ${CURDIR}../../keywords/get_user.robot
+Variables    ${CURDIR}../../../expected_results/${resource}/demo_api/get_user_result.yaml
 
 *** Test Cases ***
 TC-1    # Testcase number from JIRA ticket
