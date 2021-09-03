@@ -15,3 +15,10 @@ get_user_result:
       - Bubble Tea
     additionalInfo:
       field1: test1
+  TC-4:
+    id: 4
+    name: None
+    money: None
+    hobbies: None
+    favouriteFoods: None
+    additionalInfo: None
