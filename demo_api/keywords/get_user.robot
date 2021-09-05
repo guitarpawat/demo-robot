@@ -1,7 +1,7 @@
 *** Settings ***
-Library    String
-Library    Collections
-Resource    ${CURDIR}../../_utils/init.robot
+Library         String
+Library         Collections
+Resource        ../../_utils/init.robot
 
 *** Keywords ***
 Send Get User Request

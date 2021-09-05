@@ -1,4 +1,5 @@
 ./deletereport.sh
+ENVIRONMENT="local"
 bold=$(tput bold)
 normal=$(tput sgr0)
 number_of_files="0"
@@ -17,7 +18,8 @@ do
             number_of_files=$[$number_of_files+1]
             IFS='/' read -r -a testcasearray <<< "$testcases"
             echo "${normal}\t\t${number_of_files}\t\t${testcasearray[@]:(-1)}${normal}"
-            declare "data_$number_of_files=../demo_api/testcases/testcases/${array[@]:(-1)}/${droparray[@]:(-1)}/${testcasearray[@]:(-1)}"
+            #declare variable like data_1=../demo_api/testcases/demo/user/api_get_user.robot
+            declare "data_$number_of_files=../demo_api/testcases/${array[@]:(-1)}/${droparray[@]:(-1)}/${testcasearray[@]:(-1)}"
         done
     done
 done
@@ -27,4 +29,7 @@ echo $testkey
 
 declare "pathGet=data_$testkey"
 declare "path=${!pathGet}"
-robot --outputdir ../automation/report --listener "allure_robotframework;../report/output" ${path}
+robot -V ../_conf/env_$ENVIRONMENT.py --outputdir ../automation/report --listener "allure_robotframework;../report/output" ${path}
+
+## command to run robot
+#robot -V ../_conf/env_$ENVIRONMENT.py --outputdir ../automation/report --listener "allure_robotframework;../report/output" ../demo_api/testcases/user/api_get_user.robot

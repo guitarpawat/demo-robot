@@ -1,6 +1,4 @@
 *** Variables ***
-${resource}                  dev
-
 ${browser}                      chrome
 
 #Demo Api
