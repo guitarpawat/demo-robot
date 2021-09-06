@@ -10,7 +10,7 @@ TC-1    # Testcase number from JIRA ticket
     ${http_status_code}    ${response_body}    Send Get User Request    ${headers}    ${params}
     Log To Console    \n${response_body}
     Assert Get User Response Status Should Be Success    ${http_status_code}    ${response_body}
-    Assert Get User Response Body Should Be Valid    ${response_body}    ${get_user_result['TC-1']}
+    Assert Get User Response Body Should Be Valid    ${response_body}    ${get_user_result}[TC-1]
 
 TC-3
     [Documentation]    GET /api/book should return HTTP 200 with status 1000 when getting valid id
@@ -19,4 +19,4 @@ TC-3
     ${http_status_code}    ${response_body}    Send Get User Request    ${headers}    ${params}
     Log To Console    \n${response_body}
     Assert Get User Response Status Should Be Success    ${http_status_code}    ${response_body}
-    Assert Get User Response Body Should Be Valid    ${response_body}    ${get_user_result['TC-4']}
+    Assert Get User Response Body Should Be Valid    ${response_body}    ${get_user_result}[TC-3]
