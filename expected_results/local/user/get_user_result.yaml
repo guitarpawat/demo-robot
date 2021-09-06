@@ -15,7 +15,7 @@ get_user_result:
       - Bubble Tea
     additionalInfo:
       field1: test1
-  TC-4:
+  TC-3:
     id: 4
     name: None
     money: None
