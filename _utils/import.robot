@@ -9,3 +9,4 @@ Library     JSONLibrary
 Library     DatabaseLibrary
 Library     JSONSchemaLibrary
 Library     DiffLibrary
+Library    ../_lib/customlogger.py
