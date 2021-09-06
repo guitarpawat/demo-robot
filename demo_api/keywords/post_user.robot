@@ -1,12 +1,11 @@
 *** Settings ***
 Library    String
 Library    Collections
-Resource    ${CURDIR}../../../../keywords/common/request.robot
-Variables    ${CURDIR}../../../../resources/config/${env}/env_config.yaml
+Resource        ../../_utils/init.robot
 
 *** Keywords ***
 Send Post User Request
-    [Documentation]    Send request to GET /api/user
+    [Documentation]    Send request to POST /api/user
     [Arguments]    ${headers}    ${body}
     ${url}    Set Variable    ${demo_ms_url}/api/user
     ${http_status_code}    ${response_body}    Send Post Request    ${url}    ${headers}    ${body}

@@ -1,6 +1,5 @@
 *** Settings ***
-Resource    ${CURDIR}../../../../keywords/api/demo_ms/post_user.robot
-#Variables    ${CURDIR}../../../../resources/expected_results/${env}/demo_ms/post_user_result.yaml
+Resource        ../../../keywords/post_user.robot
 
 *** Test Cases ***
 TC-2    # Testcase number from JIRA ticket
