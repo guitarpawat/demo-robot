@@ -35,24 +35,24 @@ Assert Get User Response Body Should Be Valid
     [Arguments]    ${response_body}    ${expected_body}
     Should Be Equal As Integers    ${response_body}[data][id]    ${expected_body}[id]
     Should Be Equal As Strings     ${response_body}[data][name]    ${expected_body}[name]
-    IF    ${response_body['data']['money']} == ${None}
-        Should Be Equal As Strings    ${response_body}[data][money]    ${None}
-    ELSE
-        Should Be Equal As Numbers    ${response_body}[data][money]    ${expected_body}[money]
-    END
-    IF    ${response_body}[data][hobbies] == ${None}
-        Should Be Equal As Strings    ${response_body}[data][hobbies]    ${None}
-    ELSE
-        Lists Should Be Equal         ${response_body}[data][hobbies]    ${expected_body}[hobbies]
-    END
-    IF    ${response_body}[data][favouriteFoods] == ${None}
-        Should Be Equal As Strings    ${response_body}[data][favouriteFoods]    ${None}
-    ELSE
-        Lists Should Be Equal         ${response_body}[data][favouriteFoods]    ${expected_body}[favouriteFoods]
-    END
-    IF    ${response_body}[data][additionalInfo] == ${None}
-        Should Be Equal As Strings    ${response_body}[data][additionalInfo]    ${None}
-    ELSE
-         ${req_additional_info}    Evaluate    json.loads('''${response_body}[data][additionalInfo]''')    json
-         Dictionaries Should Be Equal    ${req_additional_info}    ${expected_body}[additionalInfo]
-    END
+    Run Keyword If    ${response_body['data']['money']} == ${None}
+    ...    Should Be Equal As Strings    ${response_body}[data][money]    ${None}
+    ...    ELSE
+    ...    Should Be Equal As Numbers    ${response_body}[data][money]    ${expected_body}[money]
+    Run Keyword If    ${response_body}[data][hobbies] == ${None}
+    ...    Should Be Equal As Strings    ${response_body}[data][hobbies]    ${None}
+    ...    ELSE
+    ...    Lists Should Be Equal         ${response_body}[data][hobbies]    ${expected_body}[hobbies]
+    Run Keyword If    ${response_body}[data][favouriteFoods] == ${None}
+    ...    Should Be Equal As Strings    ${response_body}[data][favouriteFoods]    ${None}
+    ...    ELSE
+    ...    Lists Should Be Equal         ${response_body}[data][favouriteFoods]    ${expected_body}[favouriteFoods]
+    Run Keyword If    ${response_body}[data][additionalInfo] == ${None}
+    ...    Should Be Equal As Strings    ${response_body}[data][additionalInfo]    ${None}
+    ...    ELSE
+    ...    Assert Additional Data Should Be Valid    ${response_body}[data][additionalInfo]    ${expected_body}[additionalInfo]
+
+Assert Additional Data Should Be Valid
+    [Arguments]    ${actual}    ${expected}
+    ${req_additional_info}    Evaluate    json.loads('''${actual}''')    json
+    Dictionaries Should Be Equal    ${req_additional_info}    ${expected}

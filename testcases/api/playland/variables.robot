@@ -19,16 +19,6 @@ Test Suite Variable Assignment 2
     Log To Console    Test2: ${suite_var}
 
 
-Test888
-    ${n1}    Set Variable    None
-    ${n2}    Set Variable    'None'
-    ${n3}    Set Variable    Hi
-    ${n4}    Set Variable    'Hi'
-    IF    '${n3}' == '${None}'
-        Log To Console    Hi
-    END
-
-
 *** Keywords ***
 Local Variable Assignment 1
     ${hello1}    Set Variable    Hello, world!

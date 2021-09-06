@@ -22,14 +22,3 @@ Basic Boolean Evaluation 2
     ...    Run Keywords
     ...    Log To Console    hi is 'hello'
     ...    AND    Log To Console    and answer is also equals to 42
-
-Basic Boolean Evaluation 3
-    ${answer}    Set Variable    42
-    IF    ${answer} > 42
-        Log To Console    answer is more than 42
-    ELSE IF    ${answer} < 42
-        Log To Console    answer is less than 42
-    ELSE
-        Log To Console    answer is equals to 42
-        Log To Console    More keywords without `Run Keywords`
-    END

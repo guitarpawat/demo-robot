@@ -14,9 +14,10 @@ Send Post User Request
 
 Create Header For Post User
     [Arguments]    ${correlationId}=${None}    ${content_type}=application/json    ${accept_language}=th
-    IF    '${correlationId}' == '${None}'
-        ${correlationId}    Generate Random String    16
-    END
+    ${correlationId}=    Run Keyword If    '${correlationId}' == '${None}'
+    ...    Generate Random String    16
+    ...    ELSE
+    ...    ${correlationId}
     ${headers}    Create Dictionary    correlationId=${correlationId}    content-type=${content_type}    accept-language=${accept_language}
     [Return]    ${headers}
 
