@@ -1,0 +1,15 @@
+postgres_request:
+  TCM_1:
+    firstname: 'first1'
+    lastname: 'last1'
+    address:
+      moo: 1
+      soi: '1/1'
+    salary: 10000
+  TCM_2:
+    firstname: 'first2'
+    lastname: 'last2'
+    address:
+      moo: 2
+      soi: '2/2'
+    salary: 20000
