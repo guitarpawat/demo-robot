@@ -1,7 +1,10 @@
-RESOURCE = 'local'
-path_testdata = '../../../../testdata/local'
-
-demo_ms_url = 'http://localhost:8080'
-
 browser = 'chrome'
 
+# Demo Api
+demo_ms_url = 'http://localhost:8080'
+
+# Demo Web
+demo_web_url = 'http://localhost:8080'
+
+
+path_testdata = '../../../../testdata/local'

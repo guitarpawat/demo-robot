@@ -4,6 +4,7 @@ Library    Process
 Library    ../../../../_lib/data/employee/employee.py
 Library    ../../../../_lib/data/employee/employee_backup.py
 Resource   ../../../../_utils/init.robot
+Resource   ../../../keywords/postgres_keywords.robot
 Variables  ${path_testdata}/playland/postgres.yaml
 
 
@@ -18,4 +19,5 @@ TCM-1
     [Setup]        INSERT EMPLOYEE    ${postgres_request.TCM_1.firstname}    ${postgres_request.TCM_1.lastname}    ${postgres_request.TCM_1.address}    ${postgres_request.TCM_1.salary}
     ${employee}     FIND EMPLOYEE    ${postgres_request.TCM_1.firstname}    ${postgres_request.TCM_1.lastname}
     log    ${employee[0]}
+    Assert Salary Is 10000    ${employee[3]}
     [Teardown]     INSERT EMPLOYEE BACKUP    ${employee[0]}   ${employee[1]}   ${employee[2]}   ${employee[3]}
