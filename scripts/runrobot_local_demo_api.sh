@@ -5,6 +5,9 @@ ENVIRONMENT="local"
 python ../_lib/data/config.py $ENVIRONMENT
 pip install -r ../requirements.txt
 
+## command to run robot
+#robot -V ../_conf/env_$ENVIRONMENT.py --outputdir ../automation/report --listener "allure_robotframework;../report/output" ../demo_api/testcases/demo/playland/postgres.robot
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 number_of_files="0"
@@ -35,6 +38,3 @@ echo $testkey
 declare "pathGet=data_$testkey"
 declare "path=${!pathGet}"
 robot -V ../_conf/env_$ENVIRONMENT.py --outputdir ../automation/report --listener "allure_robotframework;../report/output" ${path}
-
-## command to run robot
-#robot -V ../_conf/env_$ENVIRONMENT.py --outputdir ../automation/report --listener "allure_robotframework;../report/output" ../demo_api/testcases/demo/playland/postgres.robot
