@@ -3,7 +3,7 @@ Resource        ../../../keywords/post_user.robot
 
 *** Test Cases ***
 TC-2    # Testcase number from JIRA ticket
-    [Documentation]    GET /api/book should return HTTP 200 with status 1000 when getting valid id
+    [Documentation]    POST /api/book should return HTTP 200 and status 1003
     ${headers}    Create Header For Post User
     ${body}    Create Body For Post User    5    Jardet
     Log To Console    \n${body}
