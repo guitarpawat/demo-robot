@@ -4,7 +4,7 @@ browser = 'chrome'
 demo_ms_url = 'http://localhost:8080'
 
 # Demo Web
-demo_web_url = 'http://localhost:8080'
+demo_web_url = 'http://localhost:3000'
 
 
 path_testdata = '../../../../testdata/local'

@@ -15,7 +15,7 @@ Export File Csv From Website
 
 Verify Header Name And Row Value
     [Arguments]    ${csv}
-    ${csv[0][0]}    Remove String    ${csv[0][0]}    \ufeff    "
+    ${csv[0][0]}    Remove String    ${csv[0][0]}    \ufeff
 
     Should Be Equal As Strings    ${csv[0][0]}    header1
     Should Be Equal As Strings    ${csv[0][1]}    header2
