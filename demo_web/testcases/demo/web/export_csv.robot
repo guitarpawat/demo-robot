@@ -12,7 +12,7 @@ ${xpath_age_value}    //div[@id="surname"]/p[2]
 Test-001 Verify Content and Export Csv
 
     #Open Website
-    Open Browser    ${demo_web_url}    Chrome
+    Open Browser    http://localhost:3000    Chrome
 
     # Waiting Website to load information
     Wait Until Element Is Visible    ${xpath_name_placeholder}    20
